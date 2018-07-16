@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1029466945769",
+    "firebase_url": "https://sportfeedz-209807.firebaseio.com",
+    "project_id": "sportfeedz-209807",
+    "storage_bucket": "sportfeedz-209807.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029466945769:android:ca56027ff2fee689",
+        "android_client_info": {
+          "package_name": "com.sportFeedz.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029466945769-9li52rh8jj6momr1oa7p2j4rbevm6cm8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sportFeedz.app",
+            "certificate_hash": "bf0fc38c4c7c24a446a69dea86b257c99a2154a5"
+          }
+        },
+        {
+          "client_id": "1029466945769-edi006aklredn8m6doqff2jhcasecrnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9X-iS4ki7M5TTGmFwzfcic6EpKTGbb7Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029466945769-edi006aklredn8m6doqff2jhcasecrnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

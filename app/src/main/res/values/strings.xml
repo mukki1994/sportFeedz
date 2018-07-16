@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">SportFeedz</string>
+
+    <!--Login Page-->
+    <string name="login">Login</string>
+    <string name="login_with">Login with</string>
+    <string name="forgot_password">Forgot Password? </string>
+    <string name="recover">RECOVER</string>
+    <string name="hint_loginEmail"><font size="14">Enter your email here</font></string>
+    <string name="hint_loginPassword"><font size="14">Enter your password here</font></string>
+
+    <!--Register Page-->
+    <string name="signup">Signup</string>
+    <string name="already_a_member">Already a member?</string>
+    <string name="hint_fullname"><font size="14">Full Name (required)</font></string>
+    <string name="hint_registerEmail"><font size="14">Email Address (required)</font></string>
+    <string name="hint_setPassword"><font size="14">Set Password (required)</font></string>
+    <string name="hint_phoneNumber"><font size="14">Phone Number (optional)</font></string>
+    <string name="hint_otp_phoneNumber"><font size="14">Enter your Phone Number</font></string>
+    <string name="register">Register</string>
+    <string name="empty_fullname">Please fill fullname first</string>
+    <string name="valid_fullname">Please fill valid fullname</string>
+    <string name="empty_email">Please fill email first</string>
+    <string name="valid_email">Please fill valid email</string>
+    <string name="empty_password">Please fill password first</string>
+    <string name="valid_password">Please fill valid password</string>
+    <string name="empty_phone_number">Please fill phone number first</string>
+    <string name="enter_new_password">Enter New Password</string>
+
+    <!--Success Register-->
+    <string name="continues">Continue</string>
+    <string name="congratulations">Congratulations!!</string>
+
+    <!--Recover Password-->
+    <string name="recover_password">Recover Password</string>
+    <string name="via_email">Via Email</string>
+    <string name="via_phone">Via Phone</string>
+
+    <!--Startup Page-->
+    <string name="new_to_sportfeedz">New to SportFeedz</string>
+
+    <!--Receive Otp-->
+    <string name="didn_t_get_the_code">Didn\'t get the code?</string>
+    <string name="resend">RESEND</string>
+    <string name="otp_2600">2600</string>
+
+    <!--Success Otp-->
+    <string name="show">Show</string>
+
+    <!--facebook login-->
+    <string name="facebook_app_id">862600087274361</string>
+
+    <string name="twitter_api_key">MDwhkzHkEOOINGJoeQXc5ClnQ</string>
+    <string name="twitter_api_secret">72edl69MaAVgZr9GPJ75Cytz9pxIlKXyPyWQueTydQTRh3fxE3</string>
+
+    <!--create limited user -->
+    <string name="fullname_of_limited_user">Enter fullname of Limited User.</string>
+    <string name="full_name">Full Name</string>
+
+
+</resources>

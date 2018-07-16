@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_bg_screen"
+    tools:context=".activity.CreateLimitedUserActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_create_limitedUser"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingBottom="12dp"
+        android:background="@drawable/bg_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/image_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="110dp"
+                android:text="Create Limited User"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/toolbar_title_size"
+                android:padding="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/text_fullname_limited_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fullname_of_limited_user"
+        android:textSize="12sp"
+        android:layout_marginTop="80dp"
+        android:padding="4dp"
+        android:paddingStart="50dp"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/white_text_opacity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_create_limitedUser"/>
+    <EditText
+        android:id="@+id/edit_text_fullname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/full_name"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:padding="12dp"
+        android:paddingStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:textColorHint="@color/white_text_opacity"
+        android:background="@drawable/bg_edittext_createlimited"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_fullname_limited_user"/>
+
+    <Button
+        android:id="@+id/button_generate_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate Code"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/bg_button"
+        android:textSize="@dimen/button_textSize"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_fullname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</android.support.constraint.ConstraintLayout>
