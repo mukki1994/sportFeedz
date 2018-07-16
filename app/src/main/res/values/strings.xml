@@ -18,14 +18,13 @@
     <string name="hint_phoneNumber"><font size="14">Phone Number (optional)</font></string>
     <string name="hint_otp_phoneNumber"><font size="14">Enter your Phone Number</font></string>
     <string name="register">Register</string>
-    <string name="empty_fullname">Please fill fullname first</string>
-    <string name="valid_fullname">Please fill valid fullname</string>
-    <string name="empty_email">Please fill email first</string>
-    <string name="valid_email">Please fill valid email</string>
-    <string name="empty_password">Please fill password first</string>
-    <string name="valid_password">Please fill valid password</string>
-    <string name="empty_phone_number">Please fill phone number first</string>
-    <string name="enter_new_password">Enter New Password</string>
+    <string name="empty_fullname">Please enter a fullname</string>
+    <string name="valid_fullname">Please enter a valid email</string>
+    <string name="empty_email">Please enter a email</string>
+    <string name="valid_email">Please enter a valid email</string>
+    <string name="empty_password">Please enter a password </string>
+    <string name="valid_password">Please enter a valid password</string>
+    <string name="empty_phone_number">Please enter a phone number</string>
 
     <!--Success Register-->
     <string name="continues">Continue</string>
@@ -46,6 +45,8 @@
 
     <!--Success Otp-->
     <string name="show">Show</string>
+    <string name="enter_new_password">Enter New Password</string>
+
 
     <!--facebook login-->
     <string name="facebook_app_id">862600087274361</string>
