@@ -8,6 +8,7 @@
     <color name="blue">#A2075CA1</color>
     <color name="light_blue">#FF64C3EC</color>
     <color name="black">#000000</color>
+    <color name="black_opacity">#333333</color>
     <color name="dark_grey">#505050</color>
     <color name="grey">#FFCFCECE</color>
     <color name="light_grey">#FFE2E1E1</color>
@@ -17,6 +18,7 @@
     <color name="light_white">#DEDEDE</color>
     <color name="white_text_opacity">#bfffffff</color>
     <color name="white_view_opacity">#43FFFFFF</color>
+    <color name="white_background_opacity">#60ffffff</color>
     <color name="hint_color">#32ffffff</color>
     <color name="orange_textcolor">#F4694A</color>
 </resources>

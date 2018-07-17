@@ -15,8 +15,6 @@ import com.special.ResideMenu.R;
  */
 public class ResideMenuItem extends LinearLayout{
 
-    /** menu item  icon  */
-    private ImageView iv_icon;
     /** menu item  title */
     private TextView tv_title;
 
@@ -25,34 +23,22 @@ public class ResideMenuItem extends LinearLayout{
         initViews(context);
     }
 
-    public ResideMenuItem(Context context, int icon, int title) {
+    public ResideMenuItem(Context context, int title) {
         super(context);
         initViews(context);
-        iv_icon.setImageResource(icon);
         tv_title.setText(title);
     }
 
-    public ResideMenuItem(Context context, int icon, String title) {
+    public ResideMenuItem(Context context, String title) {
         super(context);
         initViews(context);
-        iv_icon.setImageResource(icon);
         tv_title.setText(title);
     }
 
     private void initViews(Context context){
         LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.residemenu_item, this);
-        iv_icon = (ImageView) findViewById(R.id.iv_icon);
-        tv_title = (TextView) findViewById(R.id.tv_title);
-    }
-
-    /**
-     * set the icon color;
-     *
-     * @param icon
-     */
-    public void setIcon(int icon){
-        iv_icon.setImageResource(icon);
+        tv_title = (TextView) findViewById(R.id.text_title);
     }
 
     /**

@@ -52,8 +52,6 @@
         <activity
             android:name=".activity.CreateLimitedUserActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.DashboardActivity"
-            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

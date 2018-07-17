@@ -143,7 +143,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                         String lastname = mFacebookData.getString("last_name");
                         String email = mFacebookData.getString("email");
                         String profilepic = mFacebookData.getString("profile_pic");
-                        Intent intent = new Intent(LoginActivity.this,DashboardActivity.class);
+                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                         intent.putExtra("firstname", firstname);
                         intent.putExtra("lastname", lastname);
                         intent.putExtra("email", email);
@@ -266,7 +266,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private void updateUI(FirebaseUser user) {
         mAlerDialog.dismiss();
         if (user != null) {
-            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
@@ -293,7 +293,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 String username = acct.getDisplayName();
                 String email = acct.getEmail();
                 String photoUrl = String.valueOf(acct.getPhotoUrl());
-                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 intent.putExtra("username", username);
                 intent.putExtra("email", email);
                 intent.putExtra("image", photoUrl);
@@ -320,7 +320,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.linearForgotPassword:
-                openActivity(RecoverPasswordActivity.class);
+                openActivity(MainActivity.class);
                 break;
             case R.id.button_submit:
                 if (validateEmailandPassword()){
