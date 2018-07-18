@@ -1,20 +1,14 @@
-package com.sportFeedz.app.activity.utilities;
+package com.sportFeedz.app.utilities;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.sportFeedz.app.R;
 
 /**
  * this is singleton class

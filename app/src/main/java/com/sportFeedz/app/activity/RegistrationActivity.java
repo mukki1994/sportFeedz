@@ -1,8 +1,6 @@
 package com.sportFeedz.app.activity;
 
-import android.content.Intent;
 import android.graphics.Paint;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,7 +12,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.sportFeedz.app.R;
-import com.sportFeedz.app.activity.utilities.Utils;
+import com.sportFeedz.app.utilities.Utils;
 
 public class RegistrationActivity extends BaseActivity implements View.OnClickListener {
 

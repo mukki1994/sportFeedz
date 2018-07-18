@@ -1,5 +1,6 @@
 package com.sportFeedz.app.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -7,11 +8,17 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 import com.sportFeedz.app.R;
-import com.sportFeedz.app.fragment.HomeFragment;
+import com.sportFeedz.app.fragment.FollowLimitedUserFragment;
+import com.sportFeedz.app.fragment.HomeFieldFragment;
+import com.sportFeedz.app.fragment.ResumedGamesFragment;
+import com.sportFeedz.app.fragment.SearchFollowPlayersFragment;
+import com.sportFeedz.app.fragment.StartNewGameFragment;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener{
 
@@ -22,6 +29,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private ResideMenuItem itemSearchPlayers;
     private ResideMenuItem itemFollowUser;
     private Button mBtnOpenMenu;
+    private TextView mTxtPageTitle;
+    private TextView mTxtStartNewGame;
+    private ImageView mImgNewGame;
 
     /**
      * Called when the activity is first created.
@@ -34,26 +44,26 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         init();
         setUpMenu();
         if( savedInstanceState == null )
-            changeFragment(new HomeFragment());
+            changeFragment(new HomeFieldFragment());
     }
 
     private void init(){
         mBtnOpenMenu = findViewById(R.id.button_openProfile);
+        mTxtPageTitle = findViewById(R.id.text_title);
+        mTxtStartNewGame = findViewById(R.id.text_start_newGame);
+        mImgNewGame = findViewById(R.id.image_start_newGame);
+
 
     }
 
     private void setUpMenu() {
 
-        // attach to current activity;
         resideMenu = new ResideMenu(this);
         resideMenu.setUse3D(true);
         resideMenu.setBackground(R.drawable.ic_bg_screen);
         resideMenu.attachToActivity(this);
-        resideMenu.setMenuListener(menuListener);
-        //valid scale factor is between 0.0f and 1.0f. leftmenu'width is 150dip.
         resideMenu.setScaleValue(0.7f);
 
-        // create menu items;
         itemReturnHome     = new ResideMenuItem(this,     "Return to Home Field");
         itemStartGame  = new ResideMenuItem(this,  "Start a New Game");
         itemSearchPlayers = new ResideMenuItem(this,  "Search & Follow Players");
@@ -87,22 +97,44 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if (view == itemReturnHome){
-            changeFragment(new HomeFragment());
+            changeFragment(new HomeFieldFragment());
+            mTxtPageTitle.setText("Home Field");
+            mTxtStartNewGame.setVisibility(View.VISIBLE);
+            mImgNewGame.setVisibility(View.VISIBLE);
+        }else if (view == itemStartGame){
+            changeFragment(new StartNewGameFragment());
+            mTxtPageTitle.setText("Start a New Game");
+            mTxtStartNewGame.setVisibility(View.INVISIBLE);
+            mImgNewGame.setVisibility(View.INVISIBLE);
+        }else if (view == itemSearchPlayers){
+            changeFragment(new SearchFollowPlayersFragment());
+            mTxtPageTitle.setText("Search & Follow a New Player");
+            mTxtStartNewGame.setVisibility(View.INVISIBLE);
+            mImgNewGame.setVisibility(View.INVISIBLE);
+        }else if (view == itemFollowUser){
+            changeFragment(new FollowLimitedUserFragment());
+            mTxtPageTitle.setText("Follow Limited User");
+            mTxtStartNewGame.setVisibility(View.INVISIBLE);
+            mImgNewGame.setVisibility(View.INVISIBLE);
+        }else if (view == resideMenu){
+            resideMenu.closeMenu();
         }
         resideMenu.closeMenu();
     }
 
-    private ResideMenu.OnMenuListener menuListener = new ResideMenu.OnMenuListener() {
-        @Override
-        public void openMenu() {
-            Toast.makeText(mContext, "Menu is opened!", Toast.LENGTH_SHORT).show();
-        }
+    public void replaceResumeGames(){
+        changeFragment(new ResumedGamesFragment());
+        mTxtPageTitle.setText("Resumed Games");
+        mTxtStartNewGame.setVisibility(View.INVISIBLE);
+        mImgNewGame.setVisibility(View.INVISIBLE);
+    }
 
-        @Override
-        public void closeMenu() {
-            Toast.makeText(mContext, "Menu is closed!", Toast.LENGTH_SHORT).show();
-        }
-    };
+    public void goToHomeFragment(){
+        changeFragment(new HomeFieldFragment());
+        mTxtPageTitle.setText("Home Field");
+        mTxtStartNewGame.setVisibility(View.VISIBLE);
+        mImgNewGame.setVisibility(View.VISIBLE);
+    }
 
     private void changeFragment(Fragment targetFragment){
         resideMenu.clearIgnoredViewList();
@@ -113,8 +145,12 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 .commit();
     }
 
-    // What good method is to access resideMenu？
-    public ResideMenu getResideMenu(){
-        return resideMenu;
+    @Override
+    public void onBackPressed() {
+        if (mTxtPageTitle.getText().toString().equalsIgnoreCase("Resumed Games")){
+            goToHomeFragment();
+        }else {
+            super.onBackPressed();
+        }
     }
 }

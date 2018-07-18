@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Return to Home Page"
         android:gravity="center"
-        android:textColor="#ffffff"
+        android:textColor="@drawable/bg_residemenu_item"
         android:textSize="18sp" />
 
 </LinearLayout>

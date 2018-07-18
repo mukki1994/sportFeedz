@@ -36,6 +36,7 @@ public class ResideMenu extends FrameLayout {
     private View scrollViewLeftMenu;
     private View scrollViewRightMenu;
     private View scrollViewMenu;
+    
     /**
      * Current attaching activity.
      */
@@ -114,6 +115,7 @@ public class ResideMenu extends FrameLayout {
         RelativeLayout menuHolder = (RelativeLayout) findViewById(R.id.sv_menu_holder);
         menuHolder.addView(scrollViewLeftMenu);
         menuHolder.addView(scrollViewRightMenu);
+
     }
 
     /**
