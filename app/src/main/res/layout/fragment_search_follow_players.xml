@@ -27,7 +27,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/bg_edittext_search"
                 android:hint="Search for a new player..."
-                android:padding="10dp"
+                android:padding="8dp"
                 android:textColorHint="@color/white"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -46,12 +46,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frame_search"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_newPlayers"
+    <TextView
+        android:id="@+id/text_recentResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recent Results"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_followSearchPlayers"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@id/text_recentResults"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 

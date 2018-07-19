@@ -1,21 +1,24 @@
 package com.sportFeedz.app.activity;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
+import com.special.ResideMenu.ResideMenuProfileItem;
 import com.sportFeedz.app.R;
 import com.sportFeedz.app.fragment.FollowLimitedUserFragment;
 import com.sportFeedz.app.fragment.HomeFieldFragment;
+import com.sportFeedz.app.fragment.ProfileUserFragment;
 import com.sportFeedz.app.fragment.ResumedGamesFragment;
 import com.sportFeedz.app.fragment.SearchFollowPlayersFragment;
 import com.sportFeedz.app.fragment.StartNewGameFragment;
@@ -28,10 +31,16 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private ResideMenuItem itemStartGame;
     private ResideMenuItem itemSearchPlayers;
     private ResideMenuItem itemFollowUser;
+    private ResideMenuItem itemProfileLogout;
+    private ResideMenuItem itemShowProfile;
+    private ResideMenuProfileItem itemProfile;
     private Button mBtnOpenMenu;
     private TextView mTxtPageTitle;
     private TextView mTxtStartNewGame;
     private ImageView mImgNewGame;
+    private ImageView mImgProfileOval;
+    private ImageView mImgAddFriends;
+    private TextView mTxtFriendsCount;
 
     /**
      * Called when the activity is first created.
@@ -52,7 +61,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mTxtPageTitle = findViewById(R.id.text_title);
         mTxtStartNewGame = findViewById(R.id.text_start_newGame);
         mImgNewGame = findViewById(R.id.image_start_newGame);
-
+        mImgAddFriends = findViewById(R.id.image_add_friend);
+        mImgProfileOval = findViewById(R.id.image_oval);
+        mTxtFriendsCount = findViewById(R.id.textFriendsCount);
 
     }
 
@@ -64,22 +75,36 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         resideMenu.attachToActivity(this);
         resideMenu.setScaleValue(0.7f);
 
+
+        itemProfile = new ResideMenuProfileItem(this,R.drawable.ic_andy_rubin,"Mukesh Rawat",
+                "mukesh.rawat@gmail.com");
+        itemShowProfile     = new ResideMenuItem(this,     "My Profile");
         itemReturnHome     = new ResideMenuItem(this,     "Return to Home Field");
         itemStartGame  = new ResideMenuItem(this,  "Start a New Game");
         itemSearchPlayers = new ResideMenuItem(this,  "Search & Follow Players");
         itemFollowUser = new ResideMenuItem(this,  "Follow Limited User");
+        itemProfileLogout = new ResideMenuItem(this,  "Logout");
+
+
 
         itemReturnHome.setOnClickListener(this);
         itemStartGame.setOnClickListener(this);
         itemSearchPlayers.setOnClickListener(this);
         itemFollowUser.setOnClickListener(this);
+        itemProfileLogout.setOnClickListener(this);
+        itemShowProfile.setOnClickListener(this);
 
+        resideMenu.addMenuProfileItems(itemProfile,ResideMenu.DIRECTION_LEFT);
+
+        resideMenu.addMenuItem(itemShowProfile,ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemReturnHome, ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemStartGame, ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemSearchPlayers, ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemFollowUser, ResideMenu.DIRECTION_LEFT);
+        resideMenu.addMenuItem(itemProfileLogout, ResideMenu.DIRECTION_LEFT);
 
         resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
+        resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_LEFT);
 
         mBtnOpenMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,20 +129,28 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }else if (view == itemStartGame){
             changeFragment(new StartNewGameFragment());
             mTxtPageTitle.setText("Start a New Game");
-            mTxtStartNewGame.setVisibility(View.INVISIBLE);
-            mImgNewGame.setVisibility(View.INVISIBLE);
+            setVisibility();
         }else if (view == itemSearchPlayers){
+            Log.e("searchfollow","search follopw clicked"+" ");
             changeFragment(new SearchFollowPlayersFragment());
             mTxtPageTitle.setText("Search & Follow a New Player");
-            mTxtStartNewGame.setVisibility(View.INVISIBLE);
-            mImgNewGame.setVisibility(View.INVISIBLE);
+            setVisibility();
         }else if (view == itemFollowUser){
             changeFragment(new FollowLimitedUserFragment());
             mTxtPageTitle.setText("Follow Limited User");
-            mTxtStartNewGame.setVisibility(View.INVISIBLE);
-            mImgNewGame.setVisibility(View.INVISIBLE);
-        }else if (view == resideMenu){
+            setVisibility();
+        }else if (view == itemProfileLogout){
             resideMenu.closeMenu();
+            Intent intent = new Intent(getApplicationContext(),StartupActivity.class);
+            startActivity(intent);
+        }else if (view == itemShowProfile){
+            Log.e("profile","profile clicked"+" ");
+            changeFragment(new ProfileUserFragment());
+            mTxtPageTitle.setText("Profile");
+            mImgProfileOval.setVisibility(View.VISIBLE);
+            mImgAddFriends.setVisibility(View.VISIBLE);
+            mTxtFriendsCount.setVisibility(View.VISIBLE);
+            setVisibility();
         }
         resideMenu.closeMenu();
     }
@@ -145,6 +178,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 .commit();
     }
 
+    private void setVisibility(){
+        mTxtStartNewGame.setVisibility(View.INVISIBLE);
+        mImgNewGame.setVisibility(View.INVISIBLE);
+    }
     @Override
     public void onBackPressed() {
         if (mTxtPageTitle.getText().toString().equalsIgnoreCase("Resumed Games")){

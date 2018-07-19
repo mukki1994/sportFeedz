@@ -18,8 +18,8 @@
             android:layout_height="wrap_content">
             <Button
                 android:id="@+id/button_openProfile"
-                android:layout_width="30dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="18dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/ic_drawer_menu"
@@ -42,6 +42,41 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/image_oval"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_oval"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/textFriendsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="25dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/image_oval"
+                app:layout_constraintStart_toStartOf="@id/image_oval"/>
+
+            <ImageView
+                android:id="@+id/image_add_friend"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_add_friend"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/image_oval"
+                app:layout_constraintStart_toStartOf="@id/image_oval" />
+            <ImageView
                 android:id="@+id/image_start_newGame"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
@@ -49,6 +84,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:src="@drawable/ic_new_game"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <TextView
@@ -59,6 +95,7 @@
                 android:textSize="10sp"
                 android:paddingEnd="16dp"
                 android:textColor="@color/white"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image_start_newGame"/>
         </android.support.constraint.ConstraintLayout>

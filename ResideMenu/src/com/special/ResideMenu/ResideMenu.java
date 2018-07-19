@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Rect;
-import android.os.Build;
-import android.support.constraint.ConstraintLayout;
 import android.util.DisplayMetrics;
 import android.view.*;
 import android.view.animation.AnimationUtils;
@@ -57,6 +55,7 @@ public class ResideMenu extends FrameLayout {
      */
     private List<View> ignoredViews;
     private List<ResideMenuItem> leftMenuItems;
+    ResideMenuProfileItem viewMenu;
     private List<ResideMenuItem> rightMenuItems;
     private DisplayMetrics displayMetrics = new DisplayMetrics();
     private OnMenuListener menuListener;
@@ -114,7 +113,7 @@ public class ResideMenu extends FrameLayout {
 
         RelativeLayout menuHolder = (RelativeLayout) findViewById(R.id.sv_menu_holder);
         menuHolder.addView(scrollViewLeftMenu);
-        menuHolder.addView(scrollViewRightMenu);
+        //menuHolder.addView(scrollViewRightMenu);
 
     }
 
@@ -251,6 +250,14 @@ public class ResideMenu extends FrameLayout {
             layoutLeftMenu.addView(menuItem);
         } else {
             this.rightMenuItems.add(menuItem);
+            layoutRightMenu.addView(menuItem);
+        }
+    }
+
+    public void addMenuProfileItems(ResideMenuProfileItem menuItem, int direction) {
+        if (direction == DIRECTION_LEFT) {
+            layoutLeftMenu.addView(menuItem);
+        } else {
             layoutRightMenu.addView(menuItem);
         }
     }

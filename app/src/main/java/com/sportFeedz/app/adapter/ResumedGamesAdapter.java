@@ -18,7 +18,6 @@ public class ResumedGamesAdapter extends RecyclerView.Adapter<ResumedGamesAdapte
 
     private Context mContext;
     private SwipeLayout preswipes=null;
-    View view;
 
     public ResumedGamesAdapter(Context mContext) {
         this.mContext = mContext;
@@ -27,8 +26,9 @@ public class ResumedGamesAdapter extends RecyclerView.Adapter<ResumedGamesAdapte
     @NonNull
     @Override
     public ResumedGamesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        view = LayoutInflater.from(mContext).inflate(R.layout.item_resumed_games, parent, false);
-        return new ResumedGamesViewHolder(view);    }
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_resumed_games, parent, false);
+        return new ResumedGamesViewHolder(view);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull ResumedGamesViewHolder holder, int position) {
