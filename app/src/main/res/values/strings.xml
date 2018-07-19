@@ -55,11 +55,33 @@
     <string name="twitter_api_secret">72edl69MaAVgZr9GPJ75Cytz9pxIlKXyPyWQueTydQTRh3fxE3</string>
 
     <!--create limited user -->
+    <string name="create_limited_user">Create Limited User</string>
     <string name="fullname_of_limited_user">Enter fullname of Limited User.</string>
     <string name="full_name">Full Name</string>
+    <string name="generate_code">Generate Code</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--follow limited user-->
+    <string name="enter_code_here">Enter code here</string>
+    <string name="follow">Follow</string>
+
+    <!--home page-->
+    <string name="resume_your_game">Click here to resume your game</string>
+
+    <!--user profile page-->
+
+    <string name="user_number">(+91)904 121 2323</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="followings">FOLLOWINGS</string>
+    <string name="my_fans">MY FANS</string>
+    <string name="limited_user">LIMITED USER</string>
+    <string name="change_password">Change Password</string>
+    <string name="account_privacy">Account Privacy</string>
+
+    <!--common-->
+    <string name="marcella_gage">Marcella Gage</string>
+    <string name="email_user">Marcellagage@gmail.com</string>
+
+    <!--resumed games page-->
 
 
 </resources>
