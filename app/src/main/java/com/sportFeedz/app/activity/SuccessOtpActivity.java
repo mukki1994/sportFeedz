@@ -2,12 +2,14 @@ package com.sportFeedz.app.activity;
 
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chaos.view.PinView;
 import com.sportFeedz.app.R;
 
 public class SuccessOtpActivity extends BaseActivity implements View.OnClickListener {
@@ -17,6 +19,7 @@ public class SuccessOtpActivity extends BaseActivity implements View.OnClickList
     private TextView mTxtShowPassword;
     private TextView mTxtHidePassword;
     private EditText mEdtPassword;
+    private PinView mPinOtpReceive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,9 @@ public class SuccessOtpActivity extends BaseActivity implements View.OnClickList
        mTxtShowPassword = findViewById(R.id.text_show_password);
        mTxtHidePassword = findViewById(R.id.text_hide_password);
        mEdtPassword = findViewById(R.id.edit_text_new_password);
+       mPinOtpReceive = findViewById(R.id.text_pin);
+        Log.e("PIN",getIntent().getExtras().getString("PIN")+" ");
+       mPinOtpReceive.setText(getIntent().getExtras().getString("PIN"));
     }
 
     private void setListener(){

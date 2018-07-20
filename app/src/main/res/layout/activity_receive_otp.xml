@@ -88,6 +88,7 @@
             android:cursorVisible="false"
             android:textSize="25sp"
             app:itemSpacing="22dp"
+            android:enabled="false"
             android:layout_marginTop="12dp"
             android:textColorHint="@color/orange"
             android:textColor="@drawable/bg_pinview_textcolor"

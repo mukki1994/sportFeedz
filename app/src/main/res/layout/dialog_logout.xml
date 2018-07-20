@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/dialog_upper_view"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_dialog_title" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_attention"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/black"
+            android:padding="4dp"
+            android:text="Are you sure you want to Logout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@drawable/dialog_lower_view">
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:padding="18dp"/>
+        <Button
+            android:id="@+id/button_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:padding="18dp"/>
+    </LinearLayout>
+</LinearLayout>

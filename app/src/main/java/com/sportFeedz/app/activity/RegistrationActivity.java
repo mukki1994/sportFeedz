@@ -91,17 +91,14 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
         }else if (TextUtils.isEmpty ( email )) {
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.empty_email));
             valid = false;
-        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher ( email ).matches ()) {
+        } else if (!Utils.getInstance().isEmailValid(email)) {
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.valid_email));
             valid = false;
         } else if (TextUtils.isEmpty ( password )) {
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.empty_password));
             valid = false;
-        } else if (mEdtPassword.length() < 5){
+        } else if (mEdtPassword.length() < 5 || mEdtPassword.length() >15){
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.valid_password));
-            valid = false;
-        }else if (TextUtils.isEmpty(phoneNumber)){
-            Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.empty_phone_number));
             valid = false;
         }
         return valid;

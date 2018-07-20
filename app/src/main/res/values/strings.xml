@@ -28,7 +28,7 @@
 
     <!--Success Register-->
     <string name="continues">Continue</string>
-    <string name="congratulations">Congratulations!!</string>
+    <string name="congratulations">Congratulations!</string>
 
     <!--Recover Password-->
     <string name="recover_password">Recover Password</string>
@@ -80,8 +80,21 @@
     <!--common-->
     <string name="marcella_gage">Marcella Gage</string>
     <string name="email_user">Marcellagage@gmail.com</string>
+    <string name="click_here_to_add">If your player is not found in the dropdown list, \nclick here to ADD</string>
+    <string name="add_a_limited_user">If your player is not found in the dropdown list, \nAND would rather not create a full account, \nclick here to ADD a limited user.</string>
 
     <!--resumed games page-->
 
-
+    <string-array name="items">
+        <item>Select item</item>
+        <item>Item no 1</item>
+        <item>Item no 2</item>
+        <item>Item no 3</item>
+    </string-array>
+    <string-array name="gameName">
+        <item>Select item</item>
+        <item>Item no 1</item>
+        <item>Item no 2</item>
+        <item>Item no 3</item>
+    </string-array>
 </resources>

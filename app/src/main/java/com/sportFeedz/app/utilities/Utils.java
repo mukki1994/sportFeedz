@@ -10,6 +10,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * this is singleton class
  * its contains private constructor, we can ensure that no more than one object can be created at a time
@@ -80,6 +83,18 @@ public class Utils {
     }
     return mSnackbar;
   }
+  public  boolean isEmailValid(String email) {
+    boolean isValid = false;
 
+    String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+    CharSequence inputStr = email;
+
+    Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+    Matcher matcher = pattern.matcher(inputStr);
+    if (matcher.matches()) {
+      isValid = true;
+    }
+    return isValid;
+  }
 
 }

@@ -1,5 +1,6 @@
 package com.sportFeedz.app.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.chaos.view.PinView;
 import com.sportFeedz.app.R;
 
 public class RecoverPasswordActivity extends BaseActivity implements View.OnClickListener{
@@ -71,7 +73,8 @@ public class RecoverPasswordActivity extends BaseActivity implements View.OnClic
               finish();
               break;
           case R.id.button_continue:
-              openActivity(ReceiveOtpActivity.class);
+              Intent intent = new Intent(this,ReceiveOtpActivity.class) ;
+              startActivity(intent);
               break;
       }
     }

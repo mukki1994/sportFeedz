@@ -1,13 +1,17 @@
 package com.sportFeedz.app.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -131,9 +135,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             mTxtPageTitle.setText("Start a New Game");
             setVisibility();
         }else if (view == itemSearchPlayers){
-            Log.e("searchfollow","search follopw clicked"+" ");
             changeFragment(new SearchFollowPlayersFragment());
             mTxtPageTitle.setText("Search & Follow a New Player");
+
             setVisibility();
         }else if (view == itemFollowUser){
             changeFragment(new FollowLimitedUserFragment());
@@ -141,16 +145,15 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             setVisibility();
         }else if (view == itemProfileLogout){
             resideMenu.closeMenu();
-            Intent intent = new Intent(getApplicationContext(),StartupActivity.class);
-            startActivity(intent);
+            showDialog();
         }else if (view == itemShowProfile){
-            Log.e("profile","profile clicked"+" ");
             changeFragment(new ProfileUserFragment());
             mTxtPageTitle.setText("Profile");
             mImgProfileOval.setVisibility(View.VISIBLE);
             mImgAddFriends.setVisibility(View.VISIBLE);
             mTxtFriendsCount.setVisibility(View.VISIBLE);
-            setVisibility();
+            mTxtStartNewGame.setVisibility(View.INVISIBLE);
+            mImgNewGame.setVisibility(View.INVISIBLE);
         }
         resideMenu.closeMenu();
     }
@@ -181,7 +184,30 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private void setVisibility(){
         mTxtStartNewGame.setVisibility(View.INVISIBLE);
         mImgNewGame.setVisibility(View.INVISIBLE);
+        mImgProfileOval.setVisibility(View.INVISIBLE);
+        mImgAddFriends.setVisibility(View.INVISIBLE);
+        mTxtFriendsCount.setVisibility(View.INVISIBLE);
     }
+
+    private void showDialog(){
+            Dialog dialog = new Dialog(this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setContentView(R.layout.dialog_logout);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+            final Window window = dialog.getWindow();
+            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+            window.setGravity(Gravity.CENTER);
+            Button mBtnCancel = dialog.findViewById(R.id.button_cancel);
+            Button mBtnLogout = dialog.findViewById(R.id.button_logout);
+            mBtnCancel.setOnClickListener(v -> dialog.dismiss());
+            mBtnLogout.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this,StartupActivity.class);
+                startActivity(intent);
+            });
+            dialog.show();
+        }
     @Override
     public void onBackPressed() {
         if (mTxtPageTitle.getText().toString().equalsIgnoreCase("Resumed Games")){

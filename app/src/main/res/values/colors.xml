@@ -23,4 +23,6 @@
     <color name="hint_color">#32ffffff</color>
     <color name="orange_textcolor">#F4694A</color>
     <color name="green">#B8E986</color>
+    <color name="yellow">#F5A623</color>
+
 </resources>

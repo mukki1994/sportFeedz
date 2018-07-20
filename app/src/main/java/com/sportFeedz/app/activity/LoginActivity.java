@@ -2,6 +2,7 @@ package com.sportFeedz.app.activity;
 
 import android.content.Intent;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -204,6 +205,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
             public void failure(TwitterException exception) {
                 Log.w("status", "twitterLogin:failure", exception);
                 updateUI(null);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.twitter.android"));
+                startActivity(intent);
             }
         });
     }
@@ -314,11 +318,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.linearForgotPassword:
-                openActivity(MainActivity.class);
+                openActivity(RecoverPasswordActivity.class);
                 break;
             case R.id.button_submit:
                 if (validateEmailandPassword()){
-                   openActivity(SuccessRegisterActivity.class);
+                   openActivity(MainActivity.class);
                    mEdtEmailAddress.setText("");
                    mEdtPassword.setText("");
                 }
@@ -347,11 +351,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         if (TextUtils.isEmpty ( email )) {
             Utils.getInstance().showSnackbar(mScrollViewLogin,getString(R.string.empty_email));
             valid = false;
-        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher ( email ).matches ()) {
+        } else if (!Utils.getInstance().isEmailValid(email)) {
             Utils.getInstance().showSnackbar(mScrollViewLogin,getString(R.string.valid_email));
             valid = false;
         } else if (TextUtils.isEmpty ( password )) {
             Utils.getInstance().showSnackbar(mScrollViewLogin,getString(R.string.empty_password));
+            valid = false;
+        }else if (mEdtPassword.length() < 5 || mEdtPassword.length() > 15 ) {
+            Utils.getInstance().showSnackbar(mScrollViewLogin,getString(R.string.valid_password));
             valid = false;
         }
         return valid;
