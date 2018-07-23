@@ -38,7 +38,7 @@
             android:layout_marginTop="14dp"
             android:textColor="@color/black"
             android:padding="4dp"
-            android:text="Are you sure you want to Logout?" />
+            android:text="Are you sure you want to delete this \ngame that is currently in progress?" />
     </LinearLayout>
 
     <LinearLayout
@@ -58,10 +58,10 @@
             android:layout_weight="1"
             android:padding="18dp"/>
         <Button
-            android:id="@+id/button_logout"
+            android:id="@+id/button_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:text="Delete"
             android:textAllCaps="false"
             android:background="@android:color/transparent"
             android:textColor="@color/white"

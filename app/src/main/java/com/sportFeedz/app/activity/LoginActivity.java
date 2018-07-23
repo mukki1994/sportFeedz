@@ -318,7 +318,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.linearForgotPassword:
-                openActivity(RecoverPasswordActivity.class);
+                openActivity(MainActivity.class);
                 break;
             case R.id.button_submit:
                 if (validateEmailandPassword()){

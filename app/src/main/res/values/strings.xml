@@ -80,11 +80,10 @@
     <!--common-->
     <string name="marcella_gage">Marcella Gage</string>
     <string name="email_user">Marcellagage@gmail.com</string>
+
+    <!--Start new game-->
     <string name="click_here_to_add">If your player is not found in the dropdown list, \nclick here to ADD</string>
     <string name="add_a_limited_user">If your player is not found in the dropdown list, \nAND would rather not create a full account, \nclick here to ADD a limited user.</string>
-
-    <!--resumed games page-->
-
     <string-array name="items">
         <item>Select item</item>
         <item>Item no 1</item>
@@ -97,4 +96,16 @@
         <item>Item no 2</item>
         <item>Item no 3</item>
     </string-array>
+
+
+    <!--edit profile-->
+    <string name="done">Done</string>
+    <string name="change_upload_image">Change/Upload image</string>
+    <string name="full_name_here">Enter your full name here</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="phone_number_here">Enter your phone number here</string>
+
+    <!--change password screen-->
+
 </resources>

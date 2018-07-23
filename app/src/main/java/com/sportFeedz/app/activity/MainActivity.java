@@ -130,6 +130,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             mTxtPageTitle.setText("Home Field");
             mTxtStartNewGame.setVisibility(View.VISIBLE);
             mImgNewGame.setVisibility(View.VISIBLE);
+            mTxtFriendsCount.setVisibility(View.INVISIBLE);
+            mImgAddFriends.setVisibility(View.INVISIBLE);
+            mImgProfileOval.setVisibility(View.INVISIBLE);
+
         }else if (view == itemStartGame){
             changeFragment(new StartNewGameFragment());
             mTxtPageTitle.setText("Start a New Game");
