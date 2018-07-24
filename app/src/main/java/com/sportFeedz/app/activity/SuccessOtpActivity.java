@@ -1,5 +1,7 @@
 package com.sportFeedz.app.activity;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chaos.view.PinView;
 import com.sportFeedz.app.R;
@@ -35,9 +38,12 @@ public class SuccessOtpActivity extends BaseActivity implements View.OnClickList
        mTxtShowPassword = findViewById(R.id.text_show_password);
        mTxtHidePassword = findViewById(R.id.text_hide_password);
        mEdtPassword = findViewById(R.id.edit_text_new_password);
-       mPinOtpReceive = findViewById(R.id.text_pin);
-        Log.e("PIN",getIntent().getExtras().getString("PIN")+" ");
-       mPinOtpReceive.setText(getIntent().getExtras().getString("PIN"));
+       mPinOtpReceive = findViewById(R.id.text_pin_code);
+       Intent intent = getIntent();
+       mPinOtpReceive.setText(intent.getStringExtra("PIN"));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            mPinOtpReceive.setTextColor(getColor(R.color.white));
+        }
     }
 
     private void setListener(){

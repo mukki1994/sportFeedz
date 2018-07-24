@@ -35,7 +35,7 @@
         android:id="@+id/text_success_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You are successfully register with us.Now \nyou can follow or keep score of your players."
+        android:text="You have successfully created an account.\nEnjoy!"
         android:textColor="@color/white_text_opacity"
         android:textSize="@dimen/paragraph_size"
         android:layout_marginTop="16dp"

@@ -322,9 +322,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.button_submit:
                 if (validateEmailandPassword()){
-                   openActivity(MainActivity.class);
-                   mEdtEmailAddress.setText("");
-                   mEdtPassword.setText("");
+                    openActivity(MainActivity.class);
+                    mEdtEmailAddress.setText("");
+                    mEdtPassword.setText("");
                 }
                 break;
             case R.id.image_fb:

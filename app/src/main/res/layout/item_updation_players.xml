@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:padding="8dp">
+    <TextView
+        android:id="@+id/text_updation"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="Gurdeep just scored a point!"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:background="@drawable/bg_text_updation_players"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:00 am"
+        android:textSize="8sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="@color/white_text_opacity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_updation"/>
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10 July, 2018"
+        android:textSize="8sp"
+        android:layout_marginEnd="4dp"
+        android:textColor="@color/white_text_opacity"
+        app:layout_constraintTop_toTopOf="@id/text_time"
+        app:layout_constraintBottom_toBottomOf="@id/text_time"
+        app:layout_constraintEnd_toStartOf="@id/text_time"/>
+</android.support.constraint.ConstraintLayout>

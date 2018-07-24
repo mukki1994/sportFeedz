@@ -47,9 +47,20 @@
                 android:textStyle="bold"
                 android:padding="5dp"
                 android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@id/image_share"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/text_gameName"/>
+
+            <ImageView
+                android:id="@+id/image_share"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_launcher"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/text_gameName"/>
+                app:layout_constraintStart_toEndOf="@id/text_gameProgress"/>
             <TextView
                 android:id="@+id/text_players"
                 android:layout_width="wrap_content"
@@ -111,7 +122,8 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="@id/text_players"
+                app:layout_constraintBottom_toBottomOf="@id/text_players"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circular_image_userIcon"

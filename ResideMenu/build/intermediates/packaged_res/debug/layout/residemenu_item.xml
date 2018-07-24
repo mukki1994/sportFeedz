@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Return to Home Page"
-        android:gravity="center"
+        android:layout_marginStart="20dp"
         android:textColor="@drawable/bg_residemenu_item"
         android:textSize="18sp" />
 
