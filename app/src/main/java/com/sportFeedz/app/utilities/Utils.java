@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 /**
  * this is singleton class
  * its contains private constructor, we can ensure that no more than one object can be created at a time
- * Created by android on 5/7/18.
+ * Created by android ic_toogle_on 5/7/18.
  */
 
 public class Utils {

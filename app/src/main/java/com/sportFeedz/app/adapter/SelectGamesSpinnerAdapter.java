@@ -44,7 +44,7 @@ public class SelectGamesSpinnerAdapter extends ArrayAdapter<String> {
 
     public View getCustomView(int position, View convertView, ViewGroup parent) {
 
-        View row = mInflater.inflate(R.layout.item_players_spinner, parent, false);
+        View row = mInflater.inflate(R.layout.item_games_spinner, parent, false);
         return row;
     }
 }

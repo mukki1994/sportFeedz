@@ -42,17 +42,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
     </FrameLayout>
-    <ScrollView
-        android:id="@+id/scrolview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frame_header"
-        app:layout_constraintStart_toStartOf="parent">
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/linear_one"
                 android:layout_width="match_parent"
@@ -62,6 +51,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/frame_header"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -92,7 +82,8 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:paddingStart="2dp"
-                    android:paddingEnd="2dp"                    android:drawableStart="@drawable/ic_yards"/>
+                    android:paddingEnd="2dp"
+                    android:drawableStart="@drawable/ic_yards"/>
                 <TextView
                     android:id="@+id/text_team_score"
                     android:layout_width="wrap_content"
@@ -105,7 +96,8 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:paddingStart="2dp"
-                    android:paddingEnd="2dp"                    android:layout_marginStart="12dp"
+                    android:paddingEnd="2dp"
+                    android:layout_marginStart="12dp"
                     android:drawableStart="@drawable/ic_team_score"/>
                 <TextView
                     android:id="@+id/text_time"
@@ -120,7 +112,8 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:paddingStart="2dp"
-                    android:paddingEnd="2dp"                    android:drawableStart="@drawable/ic_time_passing"/>
+                    android:paddingEnd="2dp"
+                    android:drawableStart="@drawable/ic_time_passing"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear_two"
@@ -144,7 +137,8 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:paddingStart="2dp"
-                    android:paddingEnd="2dp"                    android:drawableLeft="@drawable/ic_user_points"/>
+                    android:paddingEnd="2dp"
+                    android:drawableLeft="@drawable/ic_user_points"/>
                 <TextView
                     android:id="@+id/text_yard"
                     android:layout_width="wrap_content"
@@ -158,7 +152,8 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:paddingStart="2dp"
-                    android:paddingEnd="2dp"                    android:drawableStart="@drawable/ic_yards"/>
+                    android:paddingEnd="2dp"
+                    android:drawableStart="@drawable/ic_yards"/>
                 <TextView
                     android:id="@+id/text_team_scor"
                     android:layout_width="wrap_content"
@@ -172,7 +167,8 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:paddingStart="2dp"
-                    android:paddingEnd="2dp"                    android:drawableStart="@drawable/ic_team_score"/>
+                    android:paddingEnd="2dp"
+                    android:drawableStart="@drawable/ic_team_score"/>
                 <TextView
                     android:id="@+id/text_tim"
                     android:layout_width="wrap_content"
@@ -186,7 +182,8 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:paddingStart="2dp"
-                    android:paddingEnd="2dp"                    android:drawableStart="@drawable/ic_time_passing"/>
+                    android:paddingEnd="2dp"
+                    android:drawableStart="@drawable/ic_time_passing"/>
             </LinearLayout>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_sekected_players"
@@ -209,7 +206,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_players_updation"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="130dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -350,42 +347,40 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5"
                 app:layout_constraintTop_toBottomOf="@id/frame_footer"/>
-            <Button
-                android:id="@+id/button_finish"
-                android:layout_width="0dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:text="Finish Game"
-                android:textAllCaps="false"
-                android:textSize="@dimen/button_textSize"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:background="@drawable/bg_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/frame_footer"
-                app:layout_constraintEnd_toStartOf="@id/guideline"/>
-            <Button
-                android:id="@+id/button_save_game"
-                android:layout_width="0dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:text="Save Game for Later"
-                android:textAllCaps="false"
-                android:textSize="@dimen/button_textSize"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:background="@drawable/bg_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/guideline"
-                app:layout_constraintTop_toBottomOf="@id/frame_footer"
-                app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/button_finish"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_button"
+        android:gravity="center"
+        android:text="Finish Game"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_textSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_footer" />
+
+    <Button
+        android:id="@+id/button_save_game"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_button_start_later"
+        android:gravity="center"
+        android:text="Save Game for Later"
+        android:textAllCaps="false"
+        android:textColor="@color/orange_textcolor"
+        android:textSize="@dimen/button_textSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/frame_footer" />
         </android.support.constraint.ConstraintLayout>
-
-    </ScrollView>
-
-</android.support.constraint.ConstraintLayout>

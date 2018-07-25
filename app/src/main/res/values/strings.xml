@@ -61,7 +61,7 @@
     <string name="generate_code">Generate Code</string>
 
     <!--follow limited user-->
-    <string name="enter_code_here">Enter code here</string>
+    <string name="enter_code_here">Enter Code Here</string>
     <string name="follow">Follow</string>
 
     <!--home page-->
@@ -105,6 +105,12 @@
     <string name="email_address">Email Address</string>
     <string name="phone_number">Phone Number</string>
     <string name="phone_number_here">Enter your phone number here</string>
+
+    <!---->
+    <string name="gurdeep_just_scored_a_point">Gurdeep just scored a point!</string>
+
+    <!--success created limited user-->
+    <string name="fans_that_want_to_follow_this_player">You have successfully created a limited user \nnamed "Deepak". Please share the following code \nwith other fans that want to follow this player.</string>
 
     <!--change password screen-->
 

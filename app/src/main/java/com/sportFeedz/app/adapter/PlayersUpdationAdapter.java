@@ -21,7 +21,8 @@ public class PlayersUpdationAdapter extends RecyclerView.Adapter<PlayersUpdation
     @Override
     public PlayersUpdationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_updation_players, parent, false);
-        return new PlayersUpdationViewHolder(view);    }
+        return new PlayersUpdationViewHolder(view);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull PlayersUpdationViewHolder holder, int position) {

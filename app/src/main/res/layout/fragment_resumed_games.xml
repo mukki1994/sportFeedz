@@ -26,7 +26,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/bg_edittext_search"
-                android:hint="Search for games to resume"
+                android:hint="Search for games to resume..."
                 android:drawableLeft="@drawable/ic_search"
                 android:drawablePadding="16dp"
                 android:padding="10dp"

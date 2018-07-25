@@ -21,7 +21,8 @@ public class SearchFollowPlayersAdapter extends RecyclerView.Adapter<SearchFollo
     @Override
     public SearchFollowPlayersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_search_follow_layers, parent, false);
-        return new SearchFollowPlayersViewHolder(view);     }
+        return new SearchFollowPlayersViewHolder(view);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull SearchFollowPlayersViewHolder holder, int position) {

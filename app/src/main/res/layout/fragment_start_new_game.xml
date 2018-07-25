@@ -46,7 +46,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="45dp"
         android:layout_marginTop="16dp"
-        android:text="Select Players"
+        android:text="Select Player"
         android:textSize="14sp"
         android:textColor="@color/white"
         android:gravity="center"
@@ -172,7 +172,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="45dp"
         android:layout_marginTop="35dp"
-        android:text="Select Games"
+        android:text="Select Sport"
         android:textSize="14sp"
         android:textColor="@color/white"
         android:gravity="center"
@@ -211,7 +211,7 @@
         android:id="@+id/button_submit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Save &amp; Start Later"
+        android:text="Save &amp; Start Game Later"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textColor="@color/orange_textcolor"
@@ -223,5 +223,11 @@
         app:layout_constraintTop_toBottomOf="@id/button_startGame"
         app:layout_constraintStart_toStartOf="@id/button_startGame"
         app:layout_constraintEnd_toEndOf="@id/button_startGame"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_submit"/>
 </android.support.constraint.ConstraintLayout>
 </ScrollView>

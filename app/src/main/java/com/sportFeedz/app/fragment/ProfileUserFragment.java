@@ -58,10 +58,10 @@ public class ProfileUserFragment extends BaseFragment implements View.OnClickLis
             case R.id.toggle_privacy:
                 boolean on = ((ToggleButton) view).isChecked();
                 if (on) {
-                    mBtnTogglePrivacy.setTextOff("OFF");
+                    mBtnTogglePrivacy.setBackground(getActivity().getDrawable(R.drawable.ic_toggle_off));
                 } else {
 
-                    mBtnTogglePrivacy.setTextOn("ON");
+                    mBtnTogglePrivacy.setBackground(getActivity().getDrawable(R.drawable.ic_toogle_on));
                 }
                 break;
             case R.id.button_editProfile:

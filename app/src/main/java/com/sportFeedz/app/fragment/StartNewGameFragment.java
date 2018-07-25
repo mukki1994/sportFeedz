@@ -1,12 +1,18 @@
 package com.sportFeedz.app.fragment;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +23,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.sportFeedz.app.R;
+import com.sportFeedz.app.activity.CreateLimitedUserActivity;
 import com.sportFeedz.app.adapter.SelectGamesSpinnerAdapter;
 import com.sportFeedz.app.adapter.SelectPlayersSpinnerAdapter;
 
@@ -99,13 +106,42 @@ public class StartNewGameFragment extends BaseFragment implements AdapterView.On
     }
 
     private void setSpannable(){
-        SpannableString spannableString = new SpannableString(getString(R.string.click_here_to_add));
+        SpannableStringBuilder spannableString = new SpannableStringBuilder(getString(R.string.click_here_to_add));
         spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.orange)), 65, 68, 0);
         mTxtAddPlayers.setText(spannableString);
-        SpannableString spannableCreateLimitedUser = new SpannableString(getString(R.string.add_a_limited_user));
+        SpannableStringBuilder spannableCreateLimitedUser = new SpannableStringBuilder(getString(R.string.add_a_limited_user));
         spannableCreateLimitedUser.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.orange)), 110, 128
                 , 0);
         mTxtCreateLimitedUser.setText(spannableCreateLimitedUser);
 
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View textView) {
+                Intent intent = new Intent(getContext(), CreateLimitedUserActivity.class);
+                startActivity(intent);
+            }
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(false);
+            }
+        };
+        spannableCreateLimitedUser.setSpan(clickableSpan, 110, 128, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        mTxtCreateLimitedUser.setText(spannableCreateLimitedUser);
+        mTxtCreateLimitedUser.setMovementMethod(LinkMovementMethod.getInstance());
+        mTxtCreateLimitedUser.setHighlightColor(Color.TRANSPARENT);
+
+
+
+      /*
+        ClickableSpan clickableSpan = new ClickableSpan() {
+
+            @Override
+            public void onClick(View widget) {
+                Intent intent = new Intent(getContext(), CreateLimitedUserActivity.class);
+                startActivity(intent);
+            }
+        };
+        spannableCreateLimitedUser.setSpan(clickableSpan, 110, 128, 0);*/
     }
 }
