@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.special.ResideMenu.OnClickProfile;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 import com.special.ResideMenu.ResideMenuProfileItem;
@@ -27,7 +28,7 @@ import com.sportFeedz.app.fragment.ResumedGamesFragment;
 import com.sportFeedz.app.fragment.SearchFollowPlayersFragment;
 import com.sportFeedz.app.fragment.StartNewGameFragment;
 
-public class MainActivity extends FragmentActivity implements View.OnClickListener{
+public class MainActivity extends FragmentActivity implements View.OnClickListener,OnClickProfile{
 
     private ResideMenu resideMenu;
     private MainActivity mContext;
@@ -36,7 +37,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private ResideMenuItem itemSearchPlayers;
     private ResideMenuItem itemFollowUser;
     private ResideMenuItem itemProfileLogout;
-    private ResideMenuItem itemShowProfile;
     private ResideMenuProfileItem itemProfile;
     private Button mBtnOpenMenu;
     private TextView mTxtPageTitle;
@@ -58,6 +58,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         setUpMenu();
         if( savedInstanceState == null )
             changeFragment(new HomeFieldFragment());
+        mTxtFriendsCount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,NewRequestActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void init(){
@@ -73,7 +80,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private void setUpMenu() {
 
-        resideMenu = new ResideMenu(this);
+        resideMenu = new ResideMenu(this,this);
         resideMenu.setUse3D(true);
         resideMenu.setBackground(R.drawable.ic_bg_screen);
         resideMenu.attachToActivity(this);
@@ -82,7 +89,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
         itemProfile = new ResideMenuProfileItem(this,R.drawable.ic_andy_rubin,"Mukesh Rawat",
                 "mukesh.rawat@gmail.com");
-        itemShowProfile     = new ResideMenuItem(this,     "My Profile");
         itemReturnHome     = new ResideMenuItem(this,     "Return to Home Field");
         itemStartGame  = new ResideMenuItem(this,  "Start a New Game");
         itemSearchPlayers = new ResideMenuItem(this,  "Search & Follow Players");
@@ -96,11 +102,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         itemSearchPlayers.setOnClickListener(this);
         itemFollowUser.setOnClickListener(this);
         itemProfileLogout.setOnClickListener(this);
-        itemShowProfile.setOnClickListener(this);
 
         resideMenu.addMenuProfileItems(itemProfile,ResideMenu.DIRECTION_LEFT);
 
-        resideMenu.addMenuItem(itemShowProfile,ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemReturnHome, ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemStartGame, ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemSearchPlayers, ResideMenu.DIRECTION_LEFT);
@@ -150,14 +154,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }else if (view == itemProfileLogout){
             resideMenu.closeMenu();
             showDialog();
-        }else if (view == itemShowProfile){
-            changeFragment(new ProfileUserFragment());
-            mTxtPageTitle.setText("Profile");
-            mImgProfileOval.setVisibility(View.VISIBLE);
-            mImgAddFriends.setVisibility(View.VISIBLE);
-            mTxtFriendsCount.setVisibility(View.VISIBLE);
-            mTxtStartNewGame.setVisibility(View.INVISIBLE);
-            mImgNewGame.setVisibility(View.INVISIBLE);
         }
         resideMenu.closeMenu();
     }
@@ -219,5 +215,17 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void clickProfile() {
+       changeFragment(new ProfileUserFragment());
+        mTxtPageTitle.setText("Profile");
+        mImgProfileOval.setVisibility(View.VISIBLE);
+        mImgAddFriends.setVisibility(View.VISIBLE);
+        mTxtFriendsCount.setVisibility(View.VISIBLE);
+        mTxtStartNewGame.setVisibility(View.INVISIBLE);
+        mImgNewGame.setVisibility(View.INVISIBLE);
+       resideMenu.closeMenu();
     }
 }

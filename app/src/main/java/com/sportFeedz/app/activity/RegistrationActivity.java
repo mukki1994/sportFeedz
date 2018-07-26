@@ -79,7 +79,6 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
     private boolean isValidateDetails(){
         String email = mEdtEmailAddress.getText ().toString ().trim ();
         String password = mEdtPassword.getText ().toString ().trim ();
-        String phoneNumber = mEdtPhoneNumber.getText().toString().trim();
         String fullname = mEdtFullName.getText().toString().trim();
         boolean valid= true;
         if (TextUtils.isEmpty(fullname)){
@@ -97,7 +96,7 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
         } else if (TextUtils.isEmpty ( password )) {
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.empty_password));
             valid = false;
-        } else if (mEdtPassword.length() < 5 || mEdtPassword.length() >15){
+        } else if (mEdtPassword.length() < 6 && mEdtPassword.length() > 15){
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.valid_password));
             valid = false;
         }

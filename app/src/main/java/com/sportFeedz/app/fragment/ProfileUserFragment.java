@@ -16,6 +16,9 @@ import android.widget.ToggleButton;
 import com.sportFeedz.app.R;
 import com.sportFeedz.app.activity.ChangePasswordActivity;
 import com.sportFeedz.app.activity.EditProfileActivity;
+import com.sportFeedz.app.activity.FollowingActivity;
+import com.sportFeedz.app.activity.LimitedUserActivity;
+import com.sportFeedz.app.activity.MyFansActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +28,9 @@ public class ProfileUserFragment extends BaseFragment implements View.OnClickLis
     private ToggleButton mBtnTogglePrivacy;
     private Button mBtnEditProfile;
     private TextView mTxtChangePassword;
+    private TextView mTxtLimitedUser;
+    private TextView mTxtFollowings;
+    private TextView mTxtMyFans;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,12 +50,18 @@ public class ProfileUserFragment extends BaseFragment implements View.OnClickLis
         mBtnTogglePrivacy = view.findViewById(R.id.toggle_privacy);
         mBtnEditProfile = view.findViewById(R.id.button_editProfile);
         mTxtChangePassword = view.findViewById(R.id.text_changePassword);
+        mTxtFollowings = view.findViewById(R.id.text_following);
+        mTxtLimitedUser = view.findViewById(R.id.text_limitedUser);
+        mTxtMyFans = view.findViewById(R.id.text_myFans);
     }
 
     private void setListener(){
       mBtnTogglePrivacy.setOnClickListener(this);
       mBtnEditProfile.setOnClickListener(this);
       mTxtChangePassword.setOnClickListener(this);
+      mTxtMyFans.setOnClickListener(this);
+      mTxtLimitedUser.setOnClickListener(this);
+      mTxtFollowings.setOnClickListener(this);
     }
 
     @Override
@@ -71,6 +83,18 @@ public class ProfileUserFragment extends BaseFragment implements View.OnClickLis
             case R.id.text_changePassword:
                 Intent changePassword = new Intent(getContext(), ChangePasswordActivity.class);
                 startActivity(changePassword);
+                break;
+            case R.id.text_following:
+                Intent followings = new Intent(getContext(), FollowingActivity.class);
+                startActivity(followings);
+                break;
+            case R.id.text_myFans:
+                Intent myfans = new Intent(getContext(), MyFansActivity.class);
+                startActivity(myfans);
+                break;
+            case R.id.text_limitedUser:
+                Intent limitedUser = new Intent(getContext(), LimitedUserActivity.class);
+                startActivity(limitedUser);
                 break;
 
         }

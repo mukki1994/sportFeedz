@@ -19,7 +19,7 @@
     <string name="hint_otp_phoneNumber"><font size="14">Enter your Phone Number</font></string>
     <string name="register">Register</string>
     <string name="empty_fullname">Please enter a fullname</string>
-    <string name="valid_fullname">Please enter a valid email</string>
+    <string name="valid_fullname">Please enter a valid name</string>
     <string name="empty_email">Please enter a email</string>
     <string name="valid_email">Please enter a valid email</string>
     <string name="empty_password">Please enter a password </string>

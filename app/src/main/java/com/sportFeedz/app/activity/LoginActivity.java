@@ -38,6 +38,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.TwitterAuthProvider;
 import com.sportFeedz.app.R;
+import com.sportFeedz.app.adapter.FollowingAdapter;
+import com.sportFeedz.app.adapter.LimitedUserAdapter;
 import com.sportFeedz.app.utilities.Utils;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
@@ -318,7 +320,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.linearForgotPassword:
-                openActivity(MainActivity.class);
+                openActivity(ChangePasswordActivity.class);
                 break;
             case R.id.button_submit:
                 if (validateEmailandPassword()){
@@ -357,10 +359,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         } else if (TextUtils.isEmpty ( password )) {
             Utils.getInstance().showSnackbar(mScrollViewLogin,getString(R.string.empty_password));
             valid = false;
-        }else if (mEdtPassword.length() < 5 || mEdtPassword.length() > 15 ) {
+        }else if (mEdtPassword.length() < 6 && mEdtPassword.length() > 15 ) {
             Utils.getInstance().showSnackbar(mScrollViewLogin,getString(R.string.valid_password));
             valid = false;
         }
         return valid;
     }
+
+
+
 }

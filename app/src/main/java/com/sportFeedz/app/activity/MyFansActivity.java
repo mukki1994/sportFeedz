@@ -9,7 +9,7 @@ import com.sportFeedz.app.R;
 import com.sportFeedz.app.adapter.MyFansAdapter;
 import com.sportFeedz.app.adapter.StatsAdapter;
 
-public class MyFansActivity extends AppCompatActivity {
+public class MyFansActivity extends BaseActivity {
 
     private RecyclerView mRecyclerMyFans;
     private MyFansAdapter mMyFansAdapter;

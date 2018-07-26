@@ -2,6 +2,7 @@ package com.special.ResideMenu;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -70,8 +71,12 @@ public class ResideMenu extends FrameLayout {
     private boolean mUse3D;
     private static final int ROTATE_Y_ANGLE = 10;
 
-    public ResideMenu(Context context) {
+    private LinearLayout mLinearProfile;
+    OnClickProfile onClickProfile;
+
+    public ResideMenu(Context context,OnClickProfile onClickProfile) {
         super(context);
+        this.onClickProfile=onClickProfile;
         initViews(context, -1, -1);
     }
 
@@ -98,6 +103,13 @@ public class ResideMenu extends FrameLayout {
             scrollViewLeftMenu = inflater.inflate(
                     R.layout.residemenu_custom_left_scrollview, this, false);
             layoutLeftMenu =  scrollViewLeftMenu.findViewById(R.id.constraint_custom_layout);
+            mLinearProfile = scrollViewLeftMenu.findViewById(R.id.linearProfile);
+            mLinearProfile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClickProfile.clickProfile();
+                }
+            });
         }
 
         if (customRightMenuId >= 0) {
@@ -116,6 +128,9 @@ public class ResideMenu extends FrameLayout {
         //menuHolder.addView(scrollViewRightMenu);
 
     }
+
+
+
 
     /**
      * Returns left menu view so you can findViews and do whatever you want with
@@ -686,6 +701,8 @@ public class ResideMenu extends FrameLayout {
     public void setUse3D(boolean use3D) {
         mUse3D = use3D;
     }
+
+
 
     public interface OnMenuListener {
 

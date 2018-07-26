@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.chaos.view.PinView;
 import com.sportFeedz.app.R;
 
 public class ChangePasswordActivity extends BaseActivity implements View.OnClickListener {
@@ -16,6 +17,8 @@ public class ChangePasswordActivity extends BaseActivity implements View.OnClick
     private TextView mTxtHideOldPassword;
     private TextView mTxtShowNewPassword;
     private TextView mTxtHideNewPassword;
+    private PinView mPinOldPassword;
+    private PinView mPinNewPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,8 @@ public class ChangePasswordActivity extends BaseActivity implements View.OnClick
         setContentView(R.layout.activity_change_password);
         init();
         setListener();
+        mPinNewPassword.requestFocus();
+        mPinOldPassword.requestFocus();
     }
 
     private void init(){
@@ -31,6 +36,8 @@ public class ChangePasswordActivity extends BaseActivity implements View.OnClick
         mTxtHideOldPassword = findViewById(R.id.text_hide_password);
         mTxtShowNewPassword = findViewById(R.id.text_show_password_second);
         mTxtHideNewPassword = findViewById(R.id.text_hide_password_second);
+        mPinNewPassword = findViewById(R.id.pin_new_password);
+        mPinOldPassword = findViewById(R.id.pin_old_password);
     }
 
     private void setListener(){
