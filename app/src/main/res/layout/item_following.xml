@@ -54,16 +54,18 @@
 
             <TextView
                 android:id="@+id/text_follow"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:text="Follow"
                 android:gravity="center"
-                android:background="@color/light_orange"
+                android:background="@drawable/bg_text_follow"
                 android:layout_marginEnd="20dp"
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="10sp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
                 app:layout_constraintStart_toEndOf="@id/text_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

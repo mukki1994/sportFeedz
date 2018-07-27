@@ -83,6 +83,7 @@ public class Utils {
     }
     return mSnackbar;
   }
+
   public  boolean isEmailValid(String email) {
     boolean isValid = false;
 

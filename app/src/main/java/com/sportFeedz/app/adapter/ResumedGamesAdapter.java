@@ -22,6 +22,7 @@ import com.daimajia.swipe.SimpleSwipeListener;
 import com.daimajia.swipe.SwipeLayout;
 import com.sportFeedz.app.R;
 import com.sportFeedz.app.activity.MainActivity;
+import com.sportFeedz.app.activity.ScoreboardActivity;
 import com.sportFeedz.app.activity.StartupActivity;
 
 import static android.content.Context.WINDOW_SERVICE;
@@ -92,7 +93,7 @@ public class ResumedGamesAdapter extends RecyclerView.Adapter<ResumedGamesAdapte
         return 10;
     }
 
-    class ResumedGamesViewHolder extends RecyclerView.ViewHolder {
+    class ResumedGamesViewHolder extends RecyclerView.ViewHolder  {
         private SwipeLayout mSwipeDelete;
         private RelativeLayout mConstraintBackLayout;
         private ConstraintLayout mConstraintFrontLayout;
@@ -103,7 +104,6 @@ public class ResumedGamesAdapter extends RecyclerView.Adapter<ResumedGamesAdapte
             mConstraintBackLayout = itemView.findViewById(R.id.backLayout);
             mConstraintFrontLayout = itemView.findViewById(R.id.frontLayout);
             mImgDelete = itemView.findViewById(R.id.image_Delete);
-
         }
 
     }

@@ -8,14 +8,20 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.special.ResideMenu.OnClickProfile;
+import com.special.ResideMenu.ResideMenu;
+import com.special.ResideMenu.ResideMenuItem;
+import com.special.ResideMenu.ResideMenuProfileItem;
 import com.sportFeedz.app.R;
 import com.sportFeedz.app.adapter.ResumedGamesAdapter;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
-public class ResumedGamesFragment extends Fragment {
+public class ResumedGamesFragment extends BaseFragment{
+
     private RecyclerView mRecyclerResumedGames;
     private ResumedGamesAdapter mResumedGamesAdapter;
 
@@ -30,6 +36,7 @@ public class ResumedGamesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         init(view);
+
         mRecyclerResumedGames.setHasFixedSize(true);
         mRecyclerResumedGames.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         mResumedGamesAdapter = new ResumedGamesAdapter(getApplicationContext());
@@ -40,4 +47,8 @@ public class ResumedGamesFragment extends Fragment {
         mRecyclerResumedGames = view.findViewById(R.id.recycler_resumedGames);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

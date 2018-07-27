@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_bg_screen">
+    android:background="@drawable/ic_bg_screen"
+    android:id="@+id/constraint_editprofile">
     <FrameLayout
         android:id="@+id/frame_header"
         android:layout_width="match_parent"
@@ -50,6 +51,7 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="18dp"
                 android:padding="4dp"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -112,6 +114,7 @@
         android:paddingStart="0dp"
         android:textColor="@color/white"
         android:background="@null"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_fullname"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -151,6 +154,7 @@
         android:paddingEnd="0dp"
         android:textColor="@color/white"
         android:background="@null"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_email"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -190,6 +194,8 @@
         android:paddingEnd="0dp"
         android:textColor="@color/white"
         android:background="@null"
+        android:singleLine="true"
+        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textphoneNumber"
         app:layout_constraintStart_toStartOf="parent"/>

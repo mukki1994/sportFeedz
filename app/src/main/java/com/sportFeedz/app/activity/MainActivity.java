@@ -86,7 +86,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         resideMenu.attachToActivity(this);
         resideMenu.setScaleValue(0.7f);
 
-
         itemProfile = new ResideMenuProfileItem(this,R.drawable.ic_andy_rubin,"Mukesh Rawat",
                 "mukesh.rawat@gmail.com");
         itemReturnHome     = new ResideMenuItem(this,     "Return to Home Field");
@@ -178,7 +177,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 .beginTransaction()
                 .replace(R.id.container, targetFragment, "fragment")
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                .commit();
+                .commitAllowingStateLoss();
     }
 
     private void setVisibility(){
@@ -228,4 +227,5 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mImgNewGame.setVisibility(View.INVISIBLE);
        resideMenu.closeMenu();
     }
+
 }

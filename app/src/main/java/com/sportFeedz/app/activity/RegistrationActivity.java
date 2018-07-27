@@ -84,7 +84,7 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
         if (TextUtils.isEmpty(fullname)){
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.empty_fullname));
             valid = false;
-        } else if (mEdtFullName.length() < 5){
+        } else if (fullname.length() < 8){
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.valid_fullname));
             valid = false;
         }else if (TextUtils.isEmpty ( email )) {
@@ -96,7 +96,7 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
         } else if (TextUtils.isEmpty ( password )) {
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.empty_password));
             valid = false;
-        } else if (mEdtPassword.length() < 6 && mEdtPassword.length() > 15){
+        } else if (password.length() < 8){
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.valid_password));
             valid = false;
         }
