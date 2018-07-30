@@ -19,18 +19,16 @@ import android.widget.Toast;
 import com.chaos.view.PinView;
 import com.sportFeedz.app.R;
 
-public class SuccessOtpActivity extends BaseActivity implements View.OnClickListener,Animation.AnimationListener {
+public class SuccessOtpActivity extends BaseActivity implements View.OnClickListener {
 
     private Button mBtnContinue;
     private ImageView mImgBack;
     private TextView mTxtShowPassword;
     private TextView mTxtHidePassword;
     private EditText mEdtPassword;
-    private EditText mEdtConfirmPassword;
     private PinView mPinOtpReceive;
     private TextView mTxtNewPassword;
-    private TextView mTxtConfirmPassword;
-    private Animation animation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,26 +36,6 @@ public class SuccessOtpActivity extends BaseActivity implements View.OnClickList
         setContentView(R.layout.activity_success_otp);
         init();
         setListener();
-
-        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_left_to_right);
-
-        mEdtPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId== EditorInfo.IME_ACTION_DONE){
-
-                    // load the animation
-                    mEdtConfirmPassword.startAnimation(animation);
-                    mTxtConfirmPassword.startAnimation(animation);
-                    mEdtConfirmPassword.setVisibility(View.VISIBLE);
-                    mEdtPassword.setVisibility(View.INVISIBLE);
-                    mTxtNewPassword.setVisibility(View.INVISIBLE);
-                    mTxtConfirmPassword.setVisibility(View.VISIBLE);
-                }
-                return false;
-            }
-        });
-
     }
 
     private void init(){
@@ -68,8 +46,6 @@ public class SuccessOtpActivity extends BaseActivity implements View.OnClickList
        mEdtPassword = findViewById(R.id.edit_text_new_password);
        mPinOtpReceive = findViewById(R.id.text_pin_code);
        mTxtNewPassword = findViewById(R.id.text_new_password);
-       mTxtConfirmPassword = findViewById(R.id.text_confirm_password);
-       mEdtConfirmPassword = findViewById(R.id.edit_text_confirm_password);
 
        Intent intent = getIntent();
        mPinOtpReceive.setText(intent.getStringExtra("PIN"));
@@ -117,25 +93,5 @@ public class SuccessOtpActivity extends BaseActivity implements View.OnClickList
         mEdtPassword.setInputType( InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         mTxtHidePassword.setVisibility(View.GONE);
         mTxtShowPassword.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
-
-    @Override
-    public void onAnimationStart(Animation animation) {
-
-    }
-
-    @Override
-    public void onAnimationEnd(Animation animation) {
-
-    }
-
-    @Override
-    public void onAnimationRepeat(Animation animation) {
-
     }
 }

@@ -16,9 +16,6 @@ import android.view.View;
 import com.sportFeedz.app.R;
 import com.wang.avi.AVLoadingIndicatorView;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class BaseActivity extends AppCompatActivity {
 
     @Override

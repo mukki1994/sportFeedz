@@ -23,7 +23,7 @@
     <string name="empty_email">Please enter a email</string>
     <string name="valid_email">Please enter a valid email</string>
     <string name="empty_password">Please enter a password </string>
-    <string name="valid_password">Please enter a valid password</string>
+    <string name="valid_password">Please enter a valid password(minimum 8 length)</string>
     <string name="empty_phone_number">Please enter a phone number</string>
 
     <!--Success Register-->

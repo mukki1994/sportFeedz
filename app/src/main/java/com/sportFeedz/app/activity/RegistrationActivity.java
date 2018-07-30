@@ -84,7 +84,7 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
         if (TextUtils.isEmpty(fullname)){
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.empty_fullname));
             valid = false;
-        } else if (fullname.length() < 8){
+        } else if (fullname.length() < 4){
             Utils.getInstance().showSnackbar(mScrollViewRegister,getString(R.string.valid_fullname));
             valid = false;
         }else if (TextUtils.isEmpty ( email )) {
