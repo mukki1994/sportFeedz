@@ -22,7 +22,7 @@
         android:id="@+id/text_about_limited_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please enter the 7 digit code that you \nreceived to start following your new player."
+        android:text="@string/please_enter_the_7_digit_code"
         android:textColor="@color/white_text_opacity"
         android:textSize="@dimen/paragraph_size"
         android:gravity="center"

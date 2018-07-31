@@ -15,7 +15,7 @@
     android:id="@+id/text_title"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:text="Start a new game as the scorekeeper"
+    android:text="@string/new_game_as_the_scorekeeper"
     android:textSize="18sp"
     android:textColor="@color/white"
     android:gravity="center"
@@ -46,7 +46,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="45dp"
         android:layout_marginTop="16dp"
-        android:text="Select Player"
+        android:text="@string/select_player"
         android:textSize="14sp"
         android:textColor="@color/white"
         android:gravity="center"
@@ -81,7 +81,7 @@
         android:id="@+id/text_CreateLimtedUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Limited User"
+        android:text="@string/create_limited_user"
         android:textColor="@color/green"
         android:textSize="18sp"
         android:gravity="center"
@@ -118,7 +118,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Deepak"
+            android:text="@string/deepak"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:textSize="16sp"
@@ -126,7 +126,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Code: 56343674"
+            android:text="@string/code_56343674"
             android:layout_marginStart="10dp"
             android:textSize="14sp"/>
         <View
@@ -138,7 +138,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Davin"
+            android:text="@string/davin"
             android:layout_marginTop="4dp"
             android:layout_marginStart="10dp"
             android:textSize="16sp"
@@ -146,7 +146,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Code:46387463"
+            android:text="@string/code_46387463"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
             android:textSize="14sp"/>
@@ -172,7 +172,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="45dp"
         android:layout_marginTop="35dp"
-        android:text="Select Sport"
+        android:text="@string/select_sport"
         android:textSize="14sp"
         android:textColor="@color/white"
         android:gravity="center"
@@ -195,7 +195,7 @@
         android:id="@+id/button_startGame"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Start Game"
+        android:text="@string/start_game"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textColor="@color/white"

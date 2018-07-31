@@ -55,12 +55,12 @@
     <string name="twitter_api_secret">72edl69MaAVgZr9GPJ75Cytz9pxIlKXyPyWQueTydQTRh3fxE3</string>
 
     <!--create limited user -->
-    <string name="create_limited_user">Create Limited User</string>
     <string name="fullname_of_limited_user">Enter fullname of Limited User.</string>
     <string name="full_name">Full Name</string>
     <string name="generate_code">Generate Code</string>
 
     <!--follow limited user-->
+    <string name="please_enter_the_7_digit_code">Please enter the 7 digit code that you \nreceived to start following your new player.</string>
     <string name="enter_code_here">Enter Code Here</string>
     <string name="follow">Follow</string>
 
@@ -74,14 +74,33 @@
     <string name="followings">FOLLOWINGS</string>
     <string name="my_fans">MY FANS</string>
     <string name="limited_user">LIMITED USER</string>
-    <string name="change_password">Change Password</string>
     <string name="account_privacy">Account Privacy</string>
 
     <!--common-->
     <string name="marcella_gage">Marcella Gage</string>
     <string name="email_user">Marcellagage@gmail.com</string>
+    <string name="change_password">Change Password</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
+    <string name="finish_game">Finish Game</string>
+    <string name="logout">Logout</string>
+    <string name="create_limited_user">Create Limited User</string>
+
+
+
+
+
+
 
     <!--Start new game-->
+    <string name="new_game_as_the_scorekeeper">Start a new game as the scorekeeper</string>
+    <string name="select_player">Select Player</string>
+    <string name="deepak">Deepak</string>
+    <string name="code_56343674">Code: 56343674</string>
+    <string name="davin">Davin</string>
+    <string name="code_46387463">Code:46387463</string>
+    <string name="select_sport">Select Sport</string>
+    <string name="start_game">Start Game</string>
     <string name="click_here_to_add">If your player is not found in the dropdown list, \nclick here to ADD</string>
     <string name="add_a_limited_user">If your player is not found in the dropdown list, \nAND would rather not create a full account, \nclick here to ADD a limited user.</string>
     <string-array name="items">
@@ -106,12 +125,65 @@
     <string name="phone_number">Phone Number</string>
     <string name="phone_number_here">Enter your phone number here</string>
 
-    <!---->
-    <string name="gurdeep_just_scored_a_point">Gurdeep just scored a point!</string>
 
     <!--success created limited user-->
     <string name="fans_that_want_to_follow_this_player">You have successfully created a limited user \nnamed "Deepak". Please share the following code \nwith other fans that want to follow this player.</string>
+    <string name="succes_created_user">Succes!</string>
+    <string name="generated_code">Generated code</string>
+    <string name="copy_to_clipboard">Copy to Clipboard</string>
+    <string name="share_now">Share Now</string>
+    <string name="add_player_to_my_list">Add player to my list</string>
+
 
     <!--change password screen-->
+    <string name="old_password">Enter Old Password</string>
+    <string name="hide">Hide</string>
+    <string name="password_click_here">Forgot your old password? Click here.</string>
+    <string name="new_password">Enter New Password</string>
+    <string name="change">Change</string>
+
+    <!--following screen-->
+    <string name="following">Following</string>
+
+    <!--limited user screen-->
+    <string name="limited_users">Limited Users</string>
+
+    <!--delete dialog-->
+    <string name="delete">Delete</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete this \ngame that is currently in progress?</string>
+
+    <!--finish game dialog-->
+    <string name="are_you_sure_you_want_to_complete_">Are you sure you want to complete \nthis game?</string>
+
+    <!--logout dialog-->
+    <string name="are_you_sure_you_want_to_logout">Are you sure you want to Logout?</string>
+
+    <!--my Fans screen-->
+    <string name="fans">My Fans</string>
+
+    <!--new requests screen-->
+    <string name="new_requests">New Requests</string>
+    <string name="new_fan_requests">New Fan Requests</string>
+    <string name="suggestions">Suggestions</string>
+
+    <!--scoreboard screen-->
+    <string name="scoreboard">Scoreboard</string>
+    <string name="points">Points</string>
+    <string name="yards">Yards</string>
+    <string name="team_score">Team Score</string>
+    <string name="time">Time</string>
+    <string name="save_game_for_later">Save Game for Later</string>
+
+    <!--stats screen-->
+    <string name="stats">Stats</string>
+    <string name="gurdeep_just_scored_a_point">Gurdeep just scored a point!</string>
+
+
+    <!--success change password screen-->
+    <string name="success_change_password">Success!</string>
+    <string name="you_have_successfully_changed">You have successfully changed your \npassword.</string>
+    <string name="keep_me_logged_in">Keep me Logged in</string>
+
+
 
 </resources>
