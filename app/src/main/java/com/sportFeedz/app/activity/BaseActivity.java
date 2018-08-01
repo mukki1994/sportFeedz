@@ -23,7 +23,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
     }
-    //git remote add origin https://github.com/mukku1994/recyclerTest.git
+
     public void openActivity( Class c){
         Intent intent = new Intent(this,c) ;
         startActivity(intent);
