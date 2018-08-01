@@ -47,7 +47,7 @@ public class BaseActivity extends AppCompatActivity {
     public void changeFragment(Fragment targetFragment){
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container, targetFragment, "fragment")
+                .replace(R.id.container, targetFragment, "fragments")
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
     }
