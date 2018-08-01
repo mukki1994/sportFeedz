@@ -41,6 +41,9 @@ public class SuccessCreatedUserAcitvity extends BaseActivity implements View.OnC
         }
     }
 
+    /**
+     * this method is used for share code
+     */
     private void shareCode(){
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
